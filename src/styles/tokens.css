@@ -1,0 +1,70 @@
+/*
+ * Fanfic design tokens — source of truth.
+ * Mirrors the M1 UX spec token table (BIT-249 design-spec §5).
+ * Warm "paper" neutrals + a single violet AI accent. Prose is serif (the hero).
+ */
+:root {
+  /* Color — neutrals */
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --surface-sunken: #f1efea;
+  --border: #e7e3dc;
+  --text: #1f1b16;
+  --text-secondary: #6b6258;
+  --text-tertiary: #9a9186;
+
+  /* Color — violet AI accent (signifier: violet === AI, everywhere) */
+  --accent: #6d4aff;
+  --accent-hover: #5a38e8;
+  --accent-quiet: #f1edff;
+  --accent-border: #d9ceff;
+
+  /* Color — semantic */
+  --success: #2e7d5b;
+  --danger: #c0392b;
+  --warning: #b8860b;
+
+  /* Spacing (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* Radii */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(31, 27, 22, 0.06);
+  --shadow-md: 0 4px 16px rgba(31, 27, 22, 0.1);
+  --shadow-lg: 0 18px 48px rgba(31, 27, 22, 0.18);
+
+  /* Type */
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-prose: "Iowan Old Style", "Iowan", Georgia, "Times New Roman", serif;
+  --fs-display: 34px;
+  --fs-h2: 26px;
+  --fs-h3: 17px;
+  --fs-body: 14px;
+  --fs-caption: 12px;
+  --fs-prose: 19px;
+  --lh-prose: 1.75;
+
+  /* Motion */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+  }
+}

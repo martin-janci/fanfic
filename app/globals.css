@@ -1,0 +1,75 @@
+@import "../src/styles/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Visible focus ring on every control (a11y — WCAG, spec §7) */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent-quiet);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+/* Shimmer used by GenCard while generating; static under reduced-motion.
+   Global class (referenced from CowritePanel) — lives here, not in the CSS module. */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.shimmerLine {
+  display: block;
+  height: 12px;
+  width: 100%;
+  border-radius: var(--r-sm);
+  background: linear-gradient(
+    90deg,
+    var(--surface-sunken) 0px,
+    var(--accent-quiet) 200px,
+    var(--surface-sunken) 400px
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shimmerLine {
+    animation: none !important;
+  }
+}
